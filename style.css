@@ -1,0 +1,120 @@
+:root {
+  --white-color: #f4f4f4;
+  --orange-color: #ffab40;
+  --black-color: #455a64;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-color);
+  padding: 0;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+/* logo */
+.logo {
+  display: flex;
+  font-size: 20px;
+  padding: 8px 12px;
+}
+
+.logo_icon {
+  color: var(--orange-color);
+  padding-right: 5px;
+}
+
+/* menu */
+.menu {
+  display: flex;
+}
+
+.menu li {
+  padding: 8px 12px;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color: var(--orange-color);
+  border-radius: 4px;
+}
+
+/* btn */
+.btn {
+  display: flex;
+}
+
+.btn li {
+  padding: 8px 8px;
+  font-size: 18px;
+}
+
+/* toggle */
+.toggle {
+  font-size: 22px;
+  color: var(--orange-color);
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  display: none;
+}
+
+@media screen and (max-width: 786px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+  /* 왜 이렇게 되는지?  */
+
+  .menu {
+    padding-left: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu,
+  .btn {
+    display: none;
+  }
+
+  .btn {
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .menu.active,
+  .btn.active {
+    display: flex;
+  }
+}
